@@ -60,5 +60,32 @@ object MonCodeAlong extends App {
   val or: Boolean = true || false //either side can be true to return true
   val not: Boolean = !false
 
+  //METHODS
+  def makeACupOfTea(sugar:Int, milk:Boolean): String = {
+    s"You have made a cup of tea with $sugar spoons of sugar. Your milk selection is: $milk"
+  }
+println(makeACupOfTea(7, milk = true)) //calling the method
+println(makeACupOfTea(1, milk = false)) //calling the method
+
+  val vat: Double = 1.2 //function - can't pass in parameters
+  //Write me a method that calculates the final price of a product with VAT.
+  def priceWithVAT(price: Double): Double = {
+    price * vat
+  }
+  println(priceWithVAT(10.0))
+
+  // CLASSES (think of these as a type)
+
+  //THIS IS MY INSTRUCTION - Doesn't mean a lot by itself
+  class Dog (val name:String, val age:Int, val likesBananas:Boolean){
+    val hasEars: Boolean = true //default parameters
+    def speak:String = "woof" //declared in advance as it is the same for every Dog
+  }
+  //Use the class to make objects (e.g Dog)
+  //Object of type Dog
+  val loki:Dog = new Dog("Loki", 5, true)
+  //How do I access?
+  println(loki.speak)
+  println(loki.name)
 
 }
