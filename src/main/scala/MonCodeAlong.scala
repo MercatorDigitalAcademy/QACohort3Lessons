@@ -88,4 +88,17 @@ println(makeACupOfTea(1, milk = false)) //calling the method
   println(loki.speak)
   println(loki.name)
 
+  //Type safety - makes things clearer if they have the same type
+  class Name(name:String)
+  class Surname(surname: String)
+
+  class Cat (val name: Name, val surname: Surname, val age: Int){
+    val likesMilk:Boolean = true
+  }
+  //Cat Object
+  val Henry:Cat = new Cat (new Name("Henry"), new Surname("Jones"), 5)
+
+  Henry.age
+  Henry.likesMilk
+
 }
