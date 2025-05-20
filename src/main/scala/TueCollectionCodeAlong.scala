@@ -103,13 +103,16 @@ println("Append ++ " + appendedListTwo)
   //Prepend
   val prependSeqOne = newSeq ++ firstSeq //ORDER MATTERS!!
   println("Prepend ++ " + prependSeqOne)
-  val prependSeqTwo = newSeq +: firstSeq //: + swap position
+  val prependSeqTwo: Seq[Any] = newSeq +: firstSeq //: + swap position
   println("Prepend +: " + prependSeqTwo)
   val prependValue = 6 +: firstSeq
   println(prependValue)
 
-//  prependSeqTwo.flatMap(_+1)
-
+  val prependSpecificReturnType: Seq[Seq[Int]] = newSeq +: Seq(firstSeq)
+  val plusOneFlatMap = prependSpecificReturnType.flatMap(_.map(_ + 1)) //flatMap will escape out of the nested list, then we map through to add 1
+  println(plusOneFlatMap)
+  println(prependSpecificReturnType.flatten) //can use flatten rather than flatMap with nested structures
+  //A flatMap basically maps and then flatterns
 
 
 }
