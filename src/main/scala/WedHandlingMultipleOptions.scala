@@ -1,4 +1,3 @@
-import WedHandlingMultipleOptions.age
 
 object WedHandlingMultipleOptions extends App {
 
