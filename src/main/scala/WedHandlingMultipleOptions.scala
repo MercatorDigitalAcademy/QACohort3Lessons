@@ -125,6 +125,18 @@ object WedHandlingMultipleOptions extends App {
   println(getName(name)) //Some("April)
   println(getName(emptyName)) //None
 
+  //TASK FROM PPT
+  class ChocolateBar(val filling: Option[String])
+
+  val plainChocolate: ChocolateBar = new ChocolateBar(None)
+  val caramelChocolate: ChocolateBar = new ChocolateBar(Some("Caramel"))
+
+  def getFilling(chocolateBar: ChocolateBar): String =
+    chocolateBar.filling.getOrElse("Just chocolate")
+
+  println(getFilling(plainChocolate))
+  println(getFilling(caramelChocolate))
+
   //TRY/CATCH
 
   try {
@@ -135,6 +147,25 @@ object WedHandlingMultipleOptions extends App {
     case error: NumberFormatException => println(s"$error was not a valid input") //often see error as 'e'
   }
 
+  //EXTRA
+  //Combine if/else with try/catch
+
+  val salaryInput: String = "notANumber" // Try changing to "45000"
+
+  try {
+    val salary = salaryInput.toInt
+
+    if (salary < 12570) {
+      println("You pay no income tax.")
+    } else if (salary <= 50270) {
+      println("You pay 20% tax.")
+    } else {
+      println("You pay 40% or more tax.")
+    }
+  } catch {
+    case _: NumberFormatException =>
+      println(s"Invalid salary input: '$salaryInput'. Please enter a number.")
+  }
 
 
 }
