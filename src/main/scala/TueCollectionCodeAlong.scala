@@ -114,5 +114,16 @@ println("Append ++ " + appendedListTwo)
   println(prependSpecificReturnType.flatten) //can use flatten rather than flatMap with nested structures
   //A flatMap basically maps and then flatterns
 
+  //EXTRA
+  val a = Seq(1, 2, 3)
+  val b = Seq(4, 5)
+
+  println("a +: b " + {a +: b})
+  println("a :+ b " + {a :+ b})
+  println("b +: a " + {b +: a})
+  println("b :+ a " + {b :+ a})
+  println("9 +: a " + {9 +: a})
+  println("a :+ 9 " + {a :+ 9})
+
 
 }
