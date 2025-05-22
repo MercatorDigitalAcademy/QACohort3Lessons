@@ -1,3 +1,5 @@
+package Mon
+
 object MonCodeAlong extends App {
   //VAL = BEST PRACTICE!!
   val melons = 5 * 50

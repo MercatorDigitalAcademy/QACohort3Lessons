@@ -1,3 +1,5 @@
+package Mon
+
 object StoringValuesCollectionsAns extends App {
   //MVP
   //1a. Three plus four, times fifty-seven is less than three-hundred
