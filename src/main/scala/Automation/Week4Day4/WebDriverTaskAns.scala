@@ -86,10 +86,10 @@ object WebDriverTaskAns extends App {
 
   /** I CAN'T GET THIS WORKING */
   // c) Hidden Elements (e.g. after clicking Submit)
-//  val waitTen = new WebDriverWait(driver, Duration.ofSeconds(10))
-//  val submit = waitTen.until(ExpectedConditions.elementToBeClickable(By.id("submit")))
-//  submit.click()
-//  println("Submit button clicked after waiting!")
+  //  val waitTen = new WebDriverWait(driver, Duration.ofSeconds(10))
+  //  val submit = waitTen.until(ExpectedConditions.elementToBeClickable(By.id("submit")))
+  //  submit.click()
+  //  println("Submit button clicked after waiting!")
 
   // Extension: Drag and Drop - Herokuapp
 
@@ -104,6 +104,14 @@ object WebDriverTaskAns extends App {
   println(s"Total columns found: ${columns.size}")
 
   driver.quit()
+
+  //Research
+
+  // 1.	Investigate Selenium V4.0 and find out the improvements that have been made and what capabilities are now available.
+  //  Selenium 4.0 brings significant improvements, including full compliance with the W3C WebDriver standard, which enhances stability and browser compatibility. It introduces powerful new features like relative locators for more intuitive element targeting, Chrome DevTools Protocol (CDP) support for network and device emulation, and a redesigned Selenium Grid with better scalability, Docker support, and easier setup. The IDE and documentation have also been modernised, making it more accessible to new users.
+
+  // 2. On HRMC you may use `Remote WebDriver` features. Investigate what Remote WebDriver is and the features available.
+  //RemoteWebDriver allows tests to run on remote machines or cloud services instead of locally. This is especially useful for organisations like HRMC, where tests need to run across multiple browsers and systems in parallel, often as part of a CI/CD pipeline. It supports scalable, distributed testing and integrates easily with tools like Jenkins and platforms like BrowserStack or Sauce Labs.
 }
 
 
