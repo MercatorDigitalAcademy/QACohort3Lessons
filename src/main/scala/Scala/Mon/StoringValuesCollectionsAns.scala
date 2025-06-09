@@ -1,4 +1,4 @@
-package Mon
+package Scala.Mon
 
 object StoringValuesCollectionsAns extends App {
   //MVP

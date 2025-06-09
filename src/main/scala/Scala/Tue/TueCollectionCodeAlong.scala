@@ -1,3 +1,5 @@
+package Scala.Tue
+
 
 object TueCollectionCodeAlong extends App {
 
