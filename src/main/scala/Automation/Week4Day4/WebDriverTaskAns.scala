@@ -39,6 +39,8 @@ object WebDriverTaskAns extends App {
   val partialLink = driver.findElement(By.partialLinkText("Return"))
   partialLink.click()
 
+  driver.quit()
+
 }
 
 
