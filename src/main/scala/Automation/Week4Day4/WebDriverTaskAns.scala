@@ -2,10 +2,8 @@ package Automation.Week4Day4
 
 import org.openqa.selenium.{By, WebDriver}
 import org.openqa.selenium.chrome.ChromeDriver
-import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.support.ui.WebDriverWait
 import org.openqa.selenium.support.ui.ExpectedConditions
-
 import java.time.Duration
 
 object WebDriverTaskAns extends App {
@@ -85,11 +83,11 @@ object WebDriverTaskAns extends App {
   println("Found header with whitespace correctly handled.")
 
   /** I CAN'T GET THIS WORKING */
-  // c) Hidden Elements (e.g. after clicking Submit)
-  //  val waitTen = new WebDriverWait(driver, Duration.ofSeconds(10))
-  //  val submit = waitTen.until(ExpectedConditions.elementToBeClickable(By.id("submit")))
-  //  submit.click()
-  //  println("Submit button clicked after waiting!")
+//   c) Hidden Elements (e.g. after clicking Submit)
+//    val waitTen = new WebDriverWait(driver, Duration.ofSeconds(10))
+//    val submit = waitTen.until(ExpectedConditions.elementToBeClickable(By.id("submit")))
+//    submit.click()
+//    println("Submit button clicked after waiting!")
 
   // Extension: Drag and Drop - Herokuapp
 
