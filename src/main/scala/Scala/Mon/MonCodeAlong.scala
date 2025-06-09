@@ -1,4 +1,4 @@
-package Mon
+package Scala.Mon
 
 object MonCodeAlong extends App {
   //VAL = BEST PRACTICE!!

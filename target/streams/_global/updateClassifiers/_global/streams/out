@@ -1,3 +1,4 @@
-[debug] not up to date. inChanged = true, force = false
-[debug] Updating ProjectRef(uri("file:/Users/anjali.nair/workspace/QACohort3Lessons/"), "root")...
-[debug] Done updating ProjectRef(uri("file:/Users/anjali.nair/workspace/QACohort3Lessons/"), "root")
+[warn] scala-library-2.13.16-sources.jar no longer exists at /Users/anjali.nair/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16-sources.jar
+[debug] not up to date. inChanged = false, force = false
+[debug] Updating ProjectRef(uri("file:/Users/april.garlington/Library/CloudStorage/OneDrive-MercatorIT/Academy/QA%20Cohort%203/QA%20Academy%20Lessons/"), "root")...
+[debug] Done updating ProjectRef(uri("file:/Users/april.garlington/Library/CloudStorage/OneDrive-MercatorIT/Academy/QA%20Cohort%203/QA%20Academy%20Lessons/"), "root")

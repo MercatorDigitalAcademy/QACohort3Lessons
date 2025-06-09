@@ -1,3 +1,5 @@
+package Scala.Wed
+
 
 object WedHandlingMultipleOptions extends App {
 
