@@ -1,0 +1,23 @@
+Research
+
+1. How do we handle file upload and download in Selenium?
+
+File uploads are handled by sending the absolute file path to an `<input type="file">` element using `.sendKeys()`.
+
+File downloads require configuring the browser (like Chrome) with preferences to auto-download files to a specified directory without prompting.
+
+2.	How do we handle scrolling the page in Selenium?
+
+Scrolling is done using JavaScript execution; you can scroll by a pixel amount with `window.scrollBy()` or scroll directly to an element using `scrollIntoView()`. These techniques help interact with parts of the UI not directly accessible through standard WebDriver commands.
+
+3. What is a dynamic dropdown?
+
+A dynamic dropdown is a dropdown menu whose options are loaded or updated dynamically—usually via JavaScript—based on user input or other page events. For example, selecting a country might dynamically load a list of cities.
+
+
+4. What is a shadow DOM?
+
+The Shadow DOM is a web standard that allows developers to encapsulate HTML, CSS, and JavaScript so that it doesn't interfere with the rest of the page. Elements inside a shadow root are not accessible using standard Selenium locators.
+
+
+
