@@ -1,3 +1,4 @@
+import Scala.Calculator
 import org.scalatest.flatspec.AnyFlatSpec
 
 import scala.language.postfixOps
