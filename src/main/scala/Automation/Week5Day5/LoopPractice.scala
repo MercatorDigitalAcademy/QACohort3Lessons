@@ -1,8 +1,8 @@
 package Automation.Week5Day5
 
-import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.By
 import org.openqa.selenium.chrome.ChromeDriver
-import java.util
+
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 object LoopPractice extends App {
@@ -58,14 +58,14 @@ object LoopPractice extends App {
   }
 
   //TABLES
-  <table>
+/*  <table>
     <tr>
       <td>Apple</td> <td>Red</td>
     </tr>
     <tr>
       <td>Banana</td> <td>Yellow</td>
     </tr>
-  </table>
+  </table> */
 
   //loop through table rows
   val rows = driver.findElements(By.tagName("tr")) //find all elements contained with 'tr' tags (rows)
