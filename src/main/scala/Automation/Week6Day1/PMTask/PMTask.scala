@@ -1,9 +1,10 @@
 package Automation.Week6Day1.PMTask
 
-import Automation.Utilities.ScreenshotUtil.takeScreenshot
+
 import org.openqa.selenium.chrome.{ChromeDriver, ChromeOptions}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
 import org.openqa.selenium.{By, WebDriver}
+import Automation.Utilities.ScreenshotUtil.takeScreenshot
 
 import java.io.File
 import java.time.format.DateTimeFormatter
