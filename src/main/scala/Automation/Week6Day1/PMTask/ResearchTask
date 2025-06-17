@@ -1,0 +1,91 @@
+------- 1. Pagination ------
+Q1: How can Selenium be used to test data consistency across paginated tables (e.g., validating that items are not duplicated or skipped across pages)?
+Answer:
+1. Selenium can loop through all pages of a paginated table, capture data from each page, and compare entries for consistency. A typical approach is:
+2. Capture row data on the current page (e.g., as a list of strings or IDs).
+3. Click "Next" or use pagination controls.
+4. Repeat steps 1–2 until the last page.
+
+Use code logic to:
+Assert no duplicates
+Assert no missing expected entries
+Optionally, compare against an API or database for full accuracy.
+================================================================
+val allItems = mutable.Set[String]()
+do {
+  val pageItems = driver.findElements(By.cssSelector("table tr")).map(_.getText)
+  assert(allItems.intersect(pageItems.toSet).isEmpty) // check duplicates
+  allItems ++= pageItems
+} while (nextButton.isEnabled && nextButton.click())
+==================================================================
+
+Q2: What are best practices for writing scalable Selenium tests that verify pagination works correctly even when the dataset size changes over time?
+Answer:
+Best practices include:
+1.Avoid hardcoding page counts – use logic like checking Next button or reading total pages from the UI.
+2.Abstract pagination logic – create helper methods like getAllPages() or goToPage(n).
+3.Use explicit waits – wait for data to load after page switches to avoid race conditions.
+4.Use test data factories or APIs – if possible, prepare known data and validate exact contents.
+5.Log errors with page context – to know which page failed during large dataset tests.
+--------------------------------------------------------------------
+------------- 2. Dynamic Tables ------------
+Q1: What are the main challenges in locating and verifying content in dynamic tables updated via JavaScript/AJAX?
+Answer:
+Common challenges include:
+1.DOM changes after load – content may not be immediately available.
+2.Stale elements – elements found earlier may become invalid.
+3.Unpredictable structure – e.g., dynamic columns or rows, expandable content.
+4.Flickering or partial updates – AJAX updates may cause temporary or partial visibility.
+
+Solutions:
+1.Use WebDriverWait with ExpectedConditions.visibilityOfElementLocated.
+2.Re-locate table rows after each interaction.
+3.Use stable locators like data-id attributes if available.
+
+Q2: How can you ensure stability in element locators when working with dynamic tables that re-render DOM elements frequently?
+Answer:
+To ensure stability:
+1.Prefer attributes-based locators (e.g., data-id, role, aria-*) over CSS class names or positions.
+2.Avoid absolute XPaths – use relative, semantic XPaths instead.
+3.Re-query elements after every action if the table updates dynamically.
+4.Use wait.until(ExpectedConditions.stalenessOf(...)) before interacting with re-rendered elements.
+===========================================================================
+wait.until(ExpectedConditions.stalenessOf(oldRow))
+val newRow = driver.findElement(By.cssSelector("...")) // re-locate after DOM update
+===========================================================================
+----------------- 3. Dynamic Dropdown Lists --------------
+Q1: What are effective strategies to handle dropdowns whose options are loaded asynchronously based on user input (e.g., country → city)?
+Answer:
+Strategies include:
+1.Wait for dropdown options to load using explicit waits on option elements or expected counts.
+For cascading dropdowns:
+a. Select country
+b. Wait until city dropdown is enabled
+c. Wait for its options to load
+d. Use AJAX wait strategies like checking that dropdown.options.size > 1
+==============================================================================
+driver.findElement(By.id("country")).click()
+new Select(driver.findElement(By.id("country"))).selectByVisibleText("India")
+wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(
+  By.cssSelector("#city option"), 1))
+==============================================================================
+Q2: How does the use of Select2, Chosen, or other JS-powered dropdown libraries affect test implementation in Selenium?
+Answer:
+These libraries replace native <select> elements with complex DOM structures like <div>, <ul>, and <span>. This breaks traditional Select class use.
+Impact:
+
+Cannot use new Select(...) — must interact via JavaScript-styled components.
+
+Requires:
+
+1. Clicking a trigger element (e.g., .select2-container)
+2. Sending text to a hidden input field
+3. Clicking a suggested option
+4. May require JavaScript execution (executeScript) or advanced XPath/CSS navigation.
+===========================================================================
+driver.findElement(By.cssSelector(".select2-selection")).click()
+val input = driver.findElement(By.cssSelector(".select2-search__field"))
+input.sendKeys("New York")
+wait.until(ExpectedConditions.visibilityOfElementLocated(
+  By.cssSelector(".select2-results__option"))).click()
+============================================================================
